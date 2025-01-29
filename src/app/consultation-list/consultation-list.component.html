@@ -1,0 +1,25 @@
+<div class="consultation-list-container">
+  <h2 class="page-title">Consultations List</h2>
+  <table class="consultation-table">
+    <thead>
+      <tr>
+        <th>Owner Name</th>
+        <th>Pet Name</th>
+        <th>Pet Type</th>
+        <th>Consultation Date</th>
+        <th>Description</th>
+        <th>Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let consultation of consultations">
+        <td>{{ consultation.pet.owner.name }}</td>
+        <td>{{ consultation.pet.name }}</td>
+        <td>{{ consultation.pet.type }}</td>
+        <td>{{ consultation.consultationDate | date : "short" }}</td>
+        <td>{{ consultation.description }}</td>
+        <td>{{ consultation.fee | currency : "USD" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

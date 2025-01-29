@@ -1,0 +1,67 @@
+<div class="book-consultation-container">
+  <h2>Book Consultation</h2>
+
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Select Owner -->
+    <div>
+      <label for="owner">Select Owner:</label>
+      <select
+        id="owner"
+        [(ngModel)]="selectedOwnerId"
+        (change)="onOwnerSelect(selectedOwnerId)"
+        name="owner"
+        required
+      >
+        <option value="">-- Select Owner --</option>
+        <option *ngFor="let owner of owners" [value]="owner.id">
+          {{ owner.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Select Pet -->
+    <div>
+      <label for="pet">Select Pet:</label>
+      <select id="pet" [(ngModel)]="consultation.petId" name="pet" required>
+        <option value="">-- Select Pet --</option>
+        <option *ngFor="let pet of pets" [value]="pet.id">
+          {{ pet.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Consultation Date -->
+    <div>
+      <label for="date">Consultation Date:</label>
+      <input
+        type="date"
+        id="date"
+        [(ngModel)]="consultation.consultationDate"
+        name="consultationDate"
+        required
+      />
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="consultation.description"
+        name="description"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit">Book Consultation</button>
+  </form>
+</div>

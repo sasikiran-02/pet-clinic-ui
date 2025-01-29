@@ -1,0 +1,73 @@
+/* General container styling */
+.consultation-list-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styling for the table */
+.consultation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-table th,
+.consultation-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.consultation-table th {
+  background-color: #2c3e50;
+  color: white;
+  font-size: 16px;
+}
+
+.consultation-table td {
+  background-color: #ffffff;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Hover effect for rows */
+.consultation-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  .consultation-table th,
+  .consultation-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultation-table th,
+  .consultation-table td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+}
